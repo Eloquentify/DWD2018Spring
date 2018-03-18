@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+#bigred {
+	color: red; 
+	font-size: 100px;
+	text-decoration: underline;
+	position: relative;
+}
+</style>
+
+
+<div onmouseover="myOverFunction()">
+  <div id="bigred"><u>Hi</u></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+//   var janeX = Math.floor(Math.random()*11033);
+
+//   var janeY = Math.floor(Math.random()*10);//var janeY = json[janeX].length;
+var json = require('./week1/jane.json');
+console.log(json[10][10]);
+var jane = ["hello","how","are","you","today"];
+function myOverFunction() {
+
+	var x = Math.floor(Math.random()*800);
+	var y = Math.floor(Math.random()*600);
+
+	var janeX = Math.floor(Math.random()*jane.length);
+    var str; 
+    str = jane[janeX];
+	//var result = str.fontcolor("green");
+	document.getElementById("bigred").innerHTML = str;
+	document.getElementById("bigred").style.color = getRandomColor();
+	document.getElementById("bigred").style.left = x+'px';
+	document.getElementById("bigred").style.top = y+'px';
+
+	var words = jane.words;
+    var random_word =  words[Math.floor(Math.random() * words.length)];
+    console.log(random_word);
+
+}
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+</script>
+</body>
+</html>

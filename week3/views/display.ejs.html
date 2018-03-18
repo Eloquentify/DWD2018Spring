@@ -1,0 +1,28 @@
+<html>
+	<head><title>Template</title></head>
+	<script type="text/javascipt">
+		function setup(){
+			var datafromserver =<%"SOMETHING SHOULD BE FIXED HERE"%>
+			alert(datafromserver);
+		}
+		 window.addEventListner('load',setup);
+	</script>
+	<body>
+	<pre>
+	<% for (var i = 0; i< thedata.length; i++){ %>
+	<div style=""><%=	thedata[i]%> <!--just output data-->
+	<%}%>
+	</pre>
+
+	<form method="GET" action="/search">
+	<input type='text' name="q"><input type="submit" name="submit" value="Search">
+
+	<form method="GET" action="/formpost">
+			<input type="text" name="textfield" value="want some ASCII Art?" />
+			<input type="submit" name="submitbutton" value="May be?" />
+			<!--<input type="button" name="pushbutton" value="Button" />-->
+	</form>
+	</form>
+
+	</body>
+</html>

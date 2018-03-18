@@ -1,0 +1,34 @@
+<html>
+	<head><title>AJAXexample</title></head>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<body>
+	<script type="text/javascript">
+		$('document').ready(
+			function() {
+				$('#getweather').click(function() {
+					$.ajax({
+					  url: "http://api.openweathermap.org/data/2.5/weather?q=New%20York&appid=d21e79452f4461671f1ccf2a209d48c3&units=metric",
+					  data: {},
+					  success: function( result ) {
+					  	$('#result').html("The temp in NYC is: " + result.main.temp);
+					  },
+					  error: function(err) {
+					  	alert(err);
+					  }
+					});		
+				});
+			}
+		);
+	</script>
+<!-- 		<% for (var i = 0; i< thedata.length; i++){ %>
+		<div style=""><%=	thedata[i]%> <!--just output data-->
+		<%}%> -->
+
+	<form method="GET" action="/ajax">
+		<button id="getweather">Get Weather</button>
+		<div id="result"></div>
+	</form>
+	</form>
+
+	</body>
+</html>
