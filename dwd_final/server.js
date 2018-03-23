@@ -12,6 +12,7 @@ var osc = require('node-osc');
 var client = new osc.Client('127.0.0.1', 9000);
 var TextToSpeechV1 = require('watson-developer-cloud/text-to-speech/v1');
 var json = require('./keys.json');
+var tweets = require('./tweets_left_right.json');
 var fs = require('fs'); // Using the filesystem module
 var url = require('url');
 var app = module.exports.app = express();
@@ -80,8 +81,9 @@ var textToSpeech = new TextToSpeechV1({
   url: 'https://stream.watsonplatform.net/text-to-speech/api/'
 });
 
+var i = Math.floor(Math.random()*208);
 var params = {
-    text: '<speak>I have been assigned to handle your order status request.<express-as type="Apology"> I am sorry to inform you that the items you requested are back-ordered. We apologize for the inconvenience.</express-as><express-as type="Uncertainty"> We don\'t know when those items will become available. Maybe next week but we are not sure at this time.</express-as><express-as type="GoodNews">Because we want you to be a happy customer, management has decided to give you a 50% discount! </express-as></speak>',
+    text: tweets.i,
     voice: 'en-US_AllisonVoice', // Optional voice
     accept: 'audio/wav'
   };
