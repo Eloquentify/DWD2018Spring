@@ -12,7 +12,7 @@ var bodyParser = require('body-parser');
 var osc = require('node-osc');
 var client = new osc.Client('127.0.0.1', 9000);
 var TextToSpeechV1 = require('watson-developer-cloud/text-to-speech/v1');
-var json = require('keys.json');
+var json = require('./keys.json');
 var fs = require('fs'); // Using the filesystem module
 var url = require('url');
 var app = module.exports.app = express();
