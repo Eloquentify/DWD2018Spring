@@ -8,6 +8,7 @@ var credentials = {
 };
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var osc = require('node-osc');
 var client = new osc.Client('127.0.0.1', 9000);
 var TextToSpeechV1 = require('watson-developer-cloud/text-to-speech/v1');
