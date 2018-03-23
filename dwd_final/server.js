@@ -93,7 +93,7 @@ textToSpeech
       return;
     }
     textToSpeech.repairWavHeader(audio);
-    fs.writeFileSync('output.ogg', audio);
+    fs.writeFileSync('new.wav', audio);
     console.log('audio.wav written with a corrected wav header');
 });
 httpsServer.listen(1337);

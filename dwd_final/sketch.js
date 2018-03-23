@@ -52,6 +52,9 @@ function setup() {
 // }
 function mousePressed() {
     narration.play();
+
+    newsound = loadSound('new.wav');
+    newsound.play();
 }
 
 function draw() {
