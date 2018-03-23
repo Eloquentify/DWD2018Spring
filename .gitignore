@@ -1,3 +1,4 @@
 speech/*
 venv/*
 *.pem
+dwd_final/keys.json

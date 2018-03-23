@@ -59,6 +59,7 @@ function draw() {
         dummies[i].move();
     }
     dummies[dummies.length-1].show(66,134,224,120);
+    dummies[dummies.length-1].move();
 
 
     if (keyIsDown(RIGHT_ARROW)) {
