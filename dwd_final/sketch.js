@@ -119,10 +119,7 @@ function fadeIn() {
 function parseResult() {
     // recognition system will often append words into phrases.
     var res = myRec.resultString;
-    textSize(48);
-    fill(255, 255, 255);
-    textAlign(CENTER);
-    text(res, random(width * 0.33, width * 0.33), random(20, 20));
+    
     switch (res) {
         case 'left':
             dummies[dummies.length - 1].x -= 10;
@@ -151,6 +148,11 @@ function parseResult() {
         'word': res
     });
     console.log(res, '\t', dummies[dummies.length - 1]);
+
+    textSize(48);
+    fill(255, 255, 255);
+    textAlign(CENTER);
+    text(res,width / 2 + 60, 240);
 }
 
 
