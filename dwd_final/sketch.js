@@ -10,6 +10,8 @@ var dummies = [];
 var xoff = 0.0;
 
 var socket; // = io.connect();
+
+var narration;
 function setup() {
     createCanvas(innerWidth, innerHeight);
     background(255, 255, 255);
@@ -36,6 +38,7 @@ function setup() {
             setTimeout(fadeIn, 100);
         }
     );
+    narration = loadSound('output.ogg');
 }
 // function mousePressed() {
 //     // Make a little object with mouseX and mouseY
@@ -47,6 +50,10 @@ function setup() {
 //     // Send that object to the socket
 //     socket.emit('mouse', data);
 // }
+function mousePressed() {
+    narration.play();
+}
+
 function draw() {
     background(255);
     fill(0);
