@@ -74,7 +74,7 @@ io.sockets.on('connection',
     }
 );
 
-var text_to_speech = new TextToSpeechV1({
+var textToSpeech = new TextToSpeechV1({
   username: json.username,
   password: json.password,
   url: 'https://stream.watsonplatform.net/text-to-speech/api/'
