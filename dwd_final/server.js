@@ -80,13 +80,20 @@ var text_to_speech = new TextToSpeechV1({
   url: 'https://stream.watsonplatform.net/text-to-speech/api/'
 });
 
-// var params = {
-//     text: 'is that working?',
-//     voice: 'en-US_MichaelVoice', // Optional voice
-//     accept: 'audio/ogg'
-//   };
-// var file = text_to_speech.synthesize(params).pipe(fs.createWriteStream('public/output.ogg')); 
-//   file.on('finish', function () { 
-//     response.redirect("/textToSpeech");
-//   });
+var params = {
+    text: 'is that working?',
+    voice: 'en-US_AllisonVoice', // Optional voice
+    accept: 'audio/ogg'
+  };
+
+textToSpeech
+  .synthesize(params, function(err, audio) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    textToSpeech.repairWavHeader(audio);
+    fs.writeFileSync('output.ogg', audio);
+    console.log('audio.wav written with a corrected wav header');
+});
 httpsServer.listen(1337);
