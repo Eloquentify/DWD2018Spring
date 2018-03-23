@@ -2,3 +2,4 @@ speech/*
 venv/*
 *.pem
 dwd_final/keys.json
+dwd_final/watson-developer-cloud
