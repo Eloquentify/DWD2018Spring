@@ -52,16 +52,17 @@ function setup() {
 //     socket.emit('mouse', data);
 // }
 function mousePressed() {
+    var i = Math.floor(Math.random()*100);
     //narration.play();
-
-    
-    newsound.play();
+    if(i>=70){
+        newsound.play();
+    }
 }
 
 function draw() {
     background(255);
-    fill(0);
-    rect(260, 150, 150, 150);
+    // fill(0);
+    // rect(260, 150, 150, 150);
 
 
 
@@ -118,7 +119,10 @@ function fadeIn() {
 function parseResult() {
     // recognition system will often append words into phrases.
     var res = myRec.resultString;
-
+    textSize(48);
+    fill(255, 255, 255);
+    textAlign(CENTER);
+    text(res, random(width * 0.33, width * 0.33), random(20, 20));
     switch (res) {
         case 'left':
             dummies[dummies.length - 1].x -= 10;

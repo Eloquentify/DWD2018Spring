@@ -82,9 +82,10 @@ var textToSpeech = new TextToSpeechV1({
 });
 
 var i = Math.floor(Math.random()*208);
-console.log(tweets.i);
+var emotions = ["Apology","Uncertainty","GoodNews"];
+var j = Math.floor(Math.random()*3);
 var params = {
-    text: 'hello',
+    text: '<speak><express-as type="'+ emotions[Math.floor(Math.random()*3)]+'">'+tweets[Math.floor(Math.random()*208)].text+'</express-as></speak>',
     voice: 'en-US_AllisonVoice', // Optional voice
     accept: 'audio/wav'
   };
