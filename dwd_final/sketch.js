@@ -39,6 +39,7 @@ function setup() {
         }
     );
     narration = loadSound('output.ogg');
+    newsound = loadSound('new.wav');
 }
 // function mousePressed() {
 //     // Make a little object with mouseX and mouseY
@@ -51,9 +52,9 @@ function setup() {
 //     socket.emit('mouse', data);
 // }
 function mousePressed() {
-    narration.play();
+    //narration.play();
 
-    newsound = loadSound('new.wav');
+    
     newsound.play();
 }
 
