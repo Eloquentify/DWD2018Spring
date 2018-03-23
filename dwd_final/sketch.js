@@ -17,7 +17,7 @@ function setup() {
     for (var i = 0; i < 12; i++) {
         dummies[i] = new Dummy(50, 50, 50);
     }
-    socket = io.connect('https://45.55.233.15:1337');
+    socket = io.connect('https://67.207.89.207:1337');
     // instructions:
     textSize(48);
     textAlign(CENTER);
