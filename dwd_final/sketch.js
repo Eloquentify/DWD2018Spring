@@ -54,10 +54,12 @@ function draw() {
 
 
 
-    for (var i = 0; i < dummies.length; i++) {
-        dummies[i].show();
+    for (var i = 0; i < dummies.length-1; i++) {
+        dummies[i].show(220, 30, 240, 120);//220, 30, 240, 120
         dummies[i].move();
     }
+    dummies[dummies.length-1].show(66,134,224,120);
+
 
     if (keyIsDown(RIGHT_ARROW)) {
         console.log('right');
@@ -148,8 +150,8 @@ class Dummy {
         this.w = w;
         this.h = h + random(r);
     }
-    show() {
-        fill(220, 30, 240, 120);
+    show(a, b, c, d) {
+        fill(a, b, c, d);//220, 30, 240, 120
         rect(this.x, height - (this.h + 1), this.w, this.h);
     }
     move() {
