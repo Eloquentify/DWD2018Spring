@@ -83,7 +83,7 @@ var textToSpeech = new TextToSpeechV1({
 var params = {
     text: 'is that working?',
     voice: 'en-US_AllisonVoice', // Optional voice
-    accept: 'audio/ogg'
+    accept: 'audio/wav'
   };
 
 textToSpeech
