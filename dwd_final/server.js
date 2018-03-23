@@ -82,8 +82,9 @@ var textToSpeech = new TextToSpeechV1({
 });
 
 var i = Math.floor(Math.random()*208);
+console.log(tweets.i);
 var params = {
-    text: tweets.i,
+    text: 'hello',
     voice: 'en-US_AllisonVoice', // Optional voice
     accept: 'audio/wav'
   };
